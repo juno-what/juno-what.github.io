@@ -1,115 +1,138 @@
-/* Basic reset and font settings */
+/* === Reset & Base === */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Change the font-family as needed */
+    font-family: Arial, sans-serif;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark theme styles */
 body.dark-theme {
-    background-color: #333; /* Change the background color for dark theme */
-    color: #f4f4f4; /* Change the text color for dark theme */
+    background-color: #333;
+    color: #f4f4f4;
 }
 
-/* Header styles */
+/* === Header === */
 .fixed-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f4f4f4; /* Change the background color of the header */
+    background-color: #f4f4f4;
     z-index: 1000;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark theme header styles */
 body.dark-theme .fixed-header {
-    background-color: #444; /* Change the background color of the header for dark theme */
-    color: #f4f4f4; /* Change the text color of the header for dark theme */
+    background-color: #2c2c2c;
+    color: #f4f4f4;
 }
 
-/* Logo styles */
+/* === Logo === */
 .logo img {
-    height: 50px; /* Adjust the height of the logo as needed */
+    height: 50px;
 }
 
-/* Navigation styles */
+/* === Navbar === */
 .navbar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
 }
 
 .nav-section {
-    margin-right: 10px; /* Adjust the spacing between navigation items */
+    position: relative;
 }
 
 .nav-section a {
     text-decoration: none;
-    color: #333; /* Change the text color of navigation links */
+    color: #333;
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
+    display: block;
 }
 
-/* Dark theme navigation styles */
 body.dark-theme .nav-section a {
-    color: #f4f4f4; /* Change the text color of navigation links for dark theme */
+    color: #f4f4f4;
 }
 
-/* Hover styles for navigation links */
 .nav-section a:hover {
-    background-color: #555; /* Change the background color of navigation links on hover */
-    color: #fff; /* Change the text color of navigation links on hover */
+    background-color: #555;
+    color: #fff;
 }
 
-/* Theme switch styles */
+/* === Dropdown === */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1000;
+    padding: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-content li a {
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #555;
+}
+
+.nav-section.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* === Theme Switcher & Sidebar Button === */
 .theme-switch {
-    margin-left: auto; /* Push the theme switch to the right */
+    margin-left: auto;
 }
 
-/* Content styles */
+.theme-switch button {
+    margin-left: 10px;
+}
+
+/* === Content === */
 .content {
     display: flex;
-    margin-top: 80px; /* Adjust this value based on the height of the header */
+    margin-top: 80px; /* matches fixed header height */
 }
 
-/* Sidebar styles */
+/* === Sidebar === */
 .sidebar {
-    width: 200px; /* Adjust the width of the sidebar as needed */
-    background-color: #add8e6; /* Change the background color of the sidebar */
+    width: 200px;
+    background-color: #add8e6;
     padding: 20px;
     box-sizing: border-box;
     position: fixed;
-    top: 80px; /* Adjust this value based on the height of the header */
+    top: 80px;
     left: 0;
     bottom: 0;
     overflow-y: auto;
     transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
 }
 
-/* Dark theme sidebar styles */
 body.dark-theme .sidebar {
-    background-color: #1a1a2e; /* Change the background color of the sidebar for dark theme */
-    color: #f4f4f4; /* Change the text color of the sidebar for dark theme */
+    background-color: #1a1a2e;
+    color: #f4f4f4;
 }
 
-/* Retracted sidebar styles */
 .sidebar.retracted {
-    transform: translateX(-200px); /* Retract the sidebar */
+    transform: translateX(-200px);
 }
 
-/* Sidebar navigation styles */
 .sidebar nav ul {
     list-style: none;
     padding: 0;
@@ -117,119 +140,42 @@ body.dark-theme .sidebar {
 }
 
 .sidebar nav ul li {
-    margin-bottom: 10px; /* Adjust the spacing between sidebar navigation items */
+    margin-bottom: 10px;
 }
 
 .sidebar nav ul li a {
     text-decoration: none;
-    color: #333; /* Change the text color of sidebar navigation links */
+    color: #333;
     transition: color 0.3s;
 }
 
-/* Dark theme sidebar navigation styles */
 body.dark-theme .sidebar nav ul li a {
-    color: #f4f4f4; /* Change the text color of sidebar navigation links for dark theme */
+    color: #f4f4f4;
 }
 
-/* Hover styles for sidebar navigation links */
 .sidebar nav ul li a:hover {
-    color: #000; /* Change the text color of sidebar navigation links on hover */
+    color: #000;
 }
 
-/* Dark theme hover styles for sidebar navigation links */
 body.dark-theme .sidebar nav ul li a:hover {
-    color: #bbb; /* Change the text color of sidebar navigation links on hover for dark theme */
+    color: #bbb;
 }
 
-/* Main content styles */
+/* === Main === */
 main {
-    margin-left: 240px; /* Adjust this value based on the width of the sidebar plus any padding */
+    margin-left: 240px;
     padding: 20px;
     flex: 1;
     transition: margin-left 0.3s ease, background-color 0.3s, color 0.3s;
 }
 
-/* Dark theme main content styles */
 body.dark-theme main {
-    background-color: #333; /* Change the background color of the main content for dark theme */
-    color: #f4f4f4; /* Change the text color of the main content for dark theme */
+    background-color: #333;
+    color: #f4f4f4;
 }
 
-/* Full-width main content styles */
 main.full-width {
-    margin-left: 40px; /* Adjust this value based on the padding when sidebar is retracted */
-}
-
-/* Navbar styles override */
-.fixed-header {
-    background-color: #f4f4f4;
-}
-
-/* Ensure dark theme consistency */
-body.dark-theme .fixed-header {
-    background-color: #333;
-    color: white;
-}
-
-/* Logo link */
-.logo {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    text-decoration: none;
-}
-
-/* Navbar UL */
-.navbar ul {
-    display: flex;
-    align-items: center;
-}
-
-/* Dropdown menu */
-.nav-section.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #444;
-    top: 100%;
-    left: 0;
-    min-width: 160px;
-    z-index: 1;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    padding: 5px 0;
-}
-
-.dropdown-content li {
-    margin: 0;
-}
-
-.dropdown-content a {
-    color: white;
-    padding: 10px 20px;
-    display: block;
-    text-decoration: none;
-}
-
-.dropdown-content a:hover {
-    background-color: #555;
-}
-
-/* Show dropdown on hover */
-.nav-section.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Dark theme dropdown */
-body.dark-theme .dropdown-content {
-    background-color: #222;
-}
-
-body.dark-theme .dropdown-content a:hover {
-    background-color: #333;
+    margin-left: 40px;
 }
 
 .nav-section.dropdown .dropdown-content {
