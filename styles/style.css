@@ -56,6 +56,10 @@ body.dark-theme .fixed-header {
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
 }
 
 /* Dark theme navigation styles */
@@ -154,4 +158,84 @@ body.dark-theme main {
 /* Full-width main content styles */
 main.full-width {
     margin-left: 40px; /* Adjust this value based on the padding when sidebar is retracted */
+}
+
+/* Navbar styles override */
+.fixed-header {
+    background-color: #f4f4f4;
+}
+
+/* Ensure dark theme consistency */
+body.dark-theme .fixed-header {
+    background-color: #333;
+    color: white;
+}
+
+/* Logo link */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+/* Navbar UL */
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown menu */
+.nav-section.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 5px 0;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show dropdown on hover */
+.nav-section.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dark theme dropdown */
+body.dark-theme .dropdown-content {
+    background-color: #222;
+}
+
+body.dark-theme .dropdown-content a:hover {
+    background-color: #333;
+}
+
+.nav-section.dropdown .dropdown-content {
+  display: none;
+}
+
+.nav-section.dropdown:hover .dropdown-content {
+  display: block;
 }
