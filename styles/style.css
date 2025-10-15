@@ -178,6 +178,7 @@ main.full-width {
     margin-left: 40px;
 }
 
+/* Ensure that the dropdown remains closed until hover */
 .nav-section.dropdown .dropdown-content {
   display: none;
 }
