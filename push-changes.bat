@@ -1,3 +1,3 @@
 git add .
-git commit -m "Update at %date%"
+git commit -m "Update"
 git push origin main
