@@ -6,6 +6,15 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+body::selection {
+    background-color: orange; /* Sets the background color of the selection */
+    color: white; /* Sets the color of the selected text */
+}
+
+body::-moz-selection { /* For Firefox */
+    background-color: orange;
+    color: white;
+}
 body.dark-theme {
     background-color: #333;
     color: #f4f4f4;
